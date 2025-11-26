@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project-specific
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# CSV result files
+stock_results_*.csv
