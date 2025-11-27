@@ -1,10 +1,14 @@
-# Stock Check Tool
+# Stock Analysis Tool
 
 A Python tool to identify stocks that:
 1. Dropped 40% or more from their year-to-date high (as of yesterday)
 2. Increased 5% or more today (compared to yesterday)
 
+Available as both a command-line tool and a web application!
+
 ## Setup
+
+### Command Line Usage
 
 1. Install dependencies:
 ```bash
@@ -15,6 +19,46 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+
+### Web Application
+
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the FastAPI web server:
+```bash
+python app.py
+# Or use uvicorn directly:
+# uvicorn app:app --reload
+```
+
+3. Open your browser and visit:
+```
+http://localhost:8000
+```
+
+**FastAPI Features:**
+- Interactive API documentation at `http://localhost:8000/docs` (Swagger UI)
+- Alternative API docs at `http://localhost:8000/redoc` (ReDoc)
+- Automatic request/response validation
+
+The web interface allows you to:
+- Adjust analysis parameters (drop threshold, increase threshold)
+- View results in a beautiful table format
+- Analyze stocks interactively
+
+## Deployment
+
+To deploy this application to a website, see [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions on deploying to:
+- Replit (Easiest for beginners)
+- Railway
+- Render
+- Heroku
+- PythonAnywhere
+- Fly.io
+- DigitalOcean App Platform
 
 ## How it works
 
@@ -81,4 +125,7 @@ results = analyze_stocks(
 - pandas>=1.5.0
 - requests>=2.28.0
 - beautifulsoup4>=4.11.0
+- fastapi>=0.104.0 (for web application)
+- uvicorn[standard]>=0.24.0 (for production deployment)
+- jinja2>=3.1.0 (for templates)
 

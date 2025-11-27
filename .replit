@@ -1,0 +1,18 @@
+# Replit configuration file
+# This tells Replit how to run your application
+
+run = "uvicorn app:app --host 0.0.0.0 --port $PORT"
+
+# Language configuration
+language = "python3"
+
+# Entry point
+entrypoint = "app.py"
+
+# Install command (runs when dependencies change)
+installCommand = "pip install -r requirements.txt"
+
+# Enable webview for web applications
+[deploy]
+run = ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port $PORT"]
+
